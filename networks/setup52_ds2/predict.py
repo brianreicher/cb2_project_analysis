@@ -19,7 +19,7 @@ context = (input_shape - output_shape)//2
 print("Context is %s"%(context,))
 
 # nm
-voxel_size = Coordinate((40, 4, 4))
+voxel_size = Coordinate((1, 1, 1))
 context_nm = context*voxel_size
 input_size = input_shape*voxel_size
 output_size = output_shape*voxel_size
@@ -58,7 +58,7 @@ def predict(
     pipeline += IntensityScaleShift(raw, 2,-1)
 
     pipeline += Predict(
-            os.path.join(setup_dir, 'train_net_checkpoint_%d'%iteration),
+            os.path.join(setup_dir, 'unet_checkpoint_%d'%iteration),
             inputs={
                 net_config['raw']: raw
             },
@@ -96,9 +96,9 @@ if __name__ == "__main__":
         run_config = json.load(f)
 
     read_roi = Roi(
-        run_config['read_begin'],
-        run_config['read_size'])
-    write_roi = read_roi.grow(-context_nm, -context_nm)
+        Coordinate(run_config['read_begin']),
+        Coordinate(run_config['read_size']))
+    write_roi = read_roi#.grow(-context_nm, -context_nm)
 
     print("Read ROI in nm is %s"%read_roi)
     print("Write ROI in nm is %s"%write_roi)

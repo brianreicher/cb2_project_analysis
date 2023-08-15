@@ -1,1 +1,8 @@
-{"raw": "Placeholder:0", "myelin_embedding": "Squeeze:0", "affs": "Squeeze_1:0", "gt_myelin_embedding": "Placeholder_1:0", "gt_affs": "Placeholder_2:0", "loss_weights_myelin_embedding": "Placeholder_3:0", "loss_weights_affs": "Placeholder_4:0", "loss": "add:0", "optimizer": "Adam", "input_shape": [84, 268, 268], "output_shape": [48, 56, 56], "summary": "setup04_eucl_loss:0"}
+{"raw": "Placeholder:0", "myelin_embedding": "Squeeze:0", "affs": "Squeeze_1:0", "gt_myelin_embedding": "Placeholder_1:0", "gt_affs": "Placeholder_2:0", "loss_weights_myelin_embedding": "Placeholder_3:0", "loss_weights_affs": "Placeholder_4:0", "loss": "add:0", "optimizer": "Adam", "input_shape": [180, 180, 180], "output_shape": [88, 88, 88], "summary": "setup04_eucl_loss:0",
+"read_begin":[0,0,0], 
+"read_size":[2000,200,2000],
+"iteration": 315000,
+"raw_file": "../../../tem_tomo_seg/tomo_vol.zarr",
+"raw_dataset": "reslice_8bit_tomo1_vol_alignedv16_imaps",
+"out_file": "../../../xray-challenge-entry/setups/seeded_rusty_lr_mtlsd_refine/tomo_seg.zarr",
+"out_dataset": "cb2_checkpoint_affs"}
